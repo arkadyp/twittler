@@ -99,6 +99,20 @@
           $('#tweetButton').css({'background-color':'rgb(240,240,240)'});
         });
 
+        //ensure valid username
+        $('textarea[name=userName]').on('keypress', function(e){            
+            if($(this).val().length === 0) {
+              //first character has to be a letter
+              if(!(e.which >= 65 && e.which <= 90) && !(e.which >= 97 && e.which <= 122)) {                 
+                e.preventDefault();
+              }              
+            }
+            //allowable characters (no spaces, tabs, etc)
+            else if(!(e.which >= 33 && e.which <= 126) && !(e.which >= 128 && e.which <= 254)) {             
+              e.preventDefault();
+            }
+        }); 
+
         $('textarea[name=userName]').on('keyup', function() {                                                
           ($(this).val().length > 0) ? hasUser = true : hasUser = false;  //check for valid chars in userName
           if(hasUser && hasMsg && $('#tweetButton').text() === 'Send Tweet') {
