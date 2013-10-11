@@ -67,7 +67,25 @@
     <div id='content'>
       <div id='buttons'>
         <button id='update'>Update Full Twittler Feed</button>        
-      </div>    
+        <button id='hideButton'>Hide Tweet</button>
+        <button id='tweetButton'>Compose Tweet</button>
+      </div>   
+      <div id='sendTweet'>
+        <table>
+          <tr>
+            <th>username</th>
+            <td><textarea maxlength="25 "rows='1' name='userName'></textarea></td>          
+          </tr>
+          <tr>
+            <th>message</th>
+            <td><textarea maxlength="140" rows='3' name='userMsg'></textarea></td>
+          </tr>
+          <tr>
+            <th>character count:</th>
+            <td name='charCnt'>0/140</td>
+          </tr>        
+        </table>
+      </div> 
       <div id='tweets'></div>
     </div>
   </body>
