@@ -114,6 +114,14 @@
         }); 
 
         $('textarea[name=userName]').on('keyup', function() {                                                
+          firstChar = $(this).val().charCodeAt(0);                  
+          //check input isn't blank and that first character is valid
+          if($(this).val().length > 0 && 
+              (!(firstChar >= 65 && firstChar <= 90) && !(firstChar >= 97 && firstChar <= 122))) {
+            $(this).val("");
+            alert("Enter a valid username");            
+          }  
+
           ($(this).val().length > 0) ? hasUser = true : hasUser = false;  //check for valid chars in userName
           if(hasUser && hasMsg && $('#tweetButton').text() === 'Send Tweet') {
             $('#tweetButton').css({'background-color':'rgb(84, 245, 84)'}); //set button to green
