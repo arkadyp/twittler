@@ -7,21 +7,27 @@
   <body>
     <script>
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+      //function that will display all tweets stored in streams.home
+      function displayTweets() {
+        $('#tweets').find('div').remove(); //clear all tweets
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
+        var index = streams.home.length - 1; //set index to most recent tweet
+        while(index >= 0) {
+          var $tweet = createTweetJQObj(streams.home[index]); //create HTML element with jQuery object
+          $tweet.appendTo($('#tweets')); //add tweet to div display          
           index -= 1;
         }
+      }
 
+      $(document).ready(function(){
+        displayTweets();
       });
 
     </script>
+
+    <h2>
+      <span>TWITTLER</span>
+    </h2>
+    <div id='tweets'></div>
   </body>
 </html>
