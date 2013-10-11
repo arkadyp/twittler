@@ -91,6 +91,13 @@
             } 
           }
         });
+        
+        $('#hideButton').on('click', function() {  //hide the user input box for easier viewing of twittler feed
+          $(this).css({'display':'none'});
+          $('#sendTweet').slideToggle('medium');
+          $('#tweetButton').text('Compose Tweet');
+          $('#tweetButton').css({'background-color':'rgb(240,240,240)'});
+        });
 
         $('textarea[name=userName]').on('keyup', function() {                                                
           ($(this).val().length > 0) ? hasUser = true : hasUser = false;  //check for valid chars in userName
