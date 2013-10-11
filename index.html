@@ -58,6 +58,22 @@
           displayUserTweets($(this).text().slice(1));
         });
 
+        $('#tweetButton').on('click', function() {         
+          
+          if($('#tweetButton').text()==='Compose Tweet') {  //initial button stage that displays input boxes for user
+              $('#tweetButton').text('Send Tweet');  //change button text to secondary stage to potentially send tweet
+              if(hasUser && hasMsg) { //check if username and user message have been entered
+                $('#tweetButton').css({'background-color':'rgb(84, 245, 84)'}); //set color to green
+              }
+              else {
+                $('#tweetButton').css({'background-color':'rgb(245, 84, 84)'}); //set color to red (tweet cannot be sent)
+              }
+              $('#hideButton').css({'display':'inline'}); //display the hide button
+              $('#sendTweet').slideToggle('medium'); //display the input boxes
+            }           
+          }            
+        });
+
         $('textarea[name=userName]').on('keyup', function() {                                                
           ($(this).val().length > 0) ? hasUser = true : hasUser = false;  //check for valid chars in userName
           if(hasUser && hasMsg && $('#tweetButton').text() === 'Send Tweet') {
