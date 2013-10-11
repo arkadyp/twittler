@@ -34,6 +34,11 @@
 
       $(document).ready(function(){
         displayTweets();
+
+        $('#update').on('click', function() {
+          displayTweets();
+        });
+
       });
 
     </script>
@@ -41,6 +46,9 @@
     <h2>
       <span>TWITTLER</span>
     </h2>
+    <div id='buttons'>
+      <button id='update'>Update Full Twittler Feed</button>        
+    </div>    
     <div id='tweets'></div>
   </body>
 </html>
