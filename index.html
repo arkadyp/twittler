@@ -72,7 +72,7 @@
             $('#sendTweet').slideToggle('medium'); //display the input boxes
           }
 
-          else if { //Button is in 'Send Tweet' stage
+          else { //Button is in 'Send Tweet' stage
             if(hasUser && hasMsg) { //send tweet if username and message are entered
               writeTweet($('textarea[name=userMsg]').val(), $('textarea[name=userName]').val());      
               
