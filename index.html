@@ -3,9 +3,22 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <script src='timeago.js'></script>
   </head>
   <body>
     <script>
+
+      //create a HTML object that represents each tweet as a <div> with <spans> for user and time
+      function createTweetJQObj(tweet) {
+        var $tweet = $('<div>: '+tweet.message+'</div>');    
+        //create span for username
+        var $user = $('<span class=\'user\'>@'+tweet.user+'</span>');
+        $tweet.prepend($user);
+        //create span for time
+        var $time = $('<span class=\'time\'>\t['+jQuery.timeago(tweet.created_at)+']</span>');      
+        $tweet.append($time);        
+        return $tweet;
+      }
 
       //function that will display all tweets stored in streams.home
       function displayTweets() {
