@@ -51,6 +51,10 @@
           displayTweets();
         });
 
+        $('#tweets').on('click','.user', function(event) {
+          displayUserTweets($(this).text().slice(1));
+        });
+
       });
 
     </script>
