@@ -1,0 +1,88 @@
+body {	
+	font-family: Helvetica, sans-serif;
+}
+
+h2 {
+	background-image: url('hughjackfountain.gif');
+	background-position: center;
+	background-size: cover;
+	font-size: 600%;
+	color: white;
+	text-shadow: -4px 0 black, 0 4px blue, 4px 0 black, 0 -4px gold;
+	height: 250px;
+	width: 700px;
+	opacity: 1;
+	position: relative;
+	text-align: center;
+	margin: 0;
+	padding: 0;		
+	z-index: 1;	
+}
+
+h2 span {
+	position: relative;
+	top: 25%;	
+}
+
+#backgroundimage {
+	background-image: url('birdbackground.jpeg');	
+	display: block;
+    position: fixed;
+    top: 250px;
+    left: 0;    
+    opacity : 0.2;
+    height: 100%;
+    width: 100%;    	
+	z-index: 0;
+}
+
+#content {
+	position: relative;
+	width: 700px;
+	z-index: 5;	
+}
+
+#content #buttons {
+	text-align: center;
+}
+
+#content button {
+	font-size: large;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: 5px;	
+	outline: 0;	
+	background-color: rgb(240,240,240);
+}
+
+#sendTweet {
+	display: none;
+}
+
+#sendTweet table {	
+	margin-left: 60px;
+	text-align: top;
+	height: 105px;
+}
+
+#tweets {
+	width: 700px;
+}
+
+#tweets:hover {
+	background-color: rgba(200,200,200,.6);
+}
+
+.user {
+	color: blue;
+	font-weight: bold;
+}
+
+.user:hover{
+	color: green;
+	text-decoration: underline;
+}
