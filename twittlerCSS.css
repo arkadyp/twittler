@@ -60,13 +60,38 @@ h2 span {
 }
 
 #sendTweet {
-	display: none;
+	display: inline;
 }
 
 #sendTweet table {	
 	margin-left: 60px;
 	text-align: top;
 	height: 105px;
+}
+
+#hideButton {
+	display: inline;
+}
+
+textarea {	
+	resize: none;
+	font-family: Helvetica, sans-serif;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	padding-left: 5px;
+	width: 400px;	
+}
+
+input[name=userMsg] {
+	height: 75px;
+} 
+
+td[name=charCnt] {
+	padding-left: 5px;
+	font-weight: bold;
+	font-size: large;
 }
 
 #tweets {
