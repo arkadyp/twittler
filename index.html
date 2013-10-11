@@ -32,6 +32,18 @@
         }
       }
 
+      //display all tweets by a particular user stored in streams.users
+      function displayUserTweets(userName) {
+        $('#tweets').find('div').remove();
+
+        var index = streams.users[userName].length - 1;
+        while(index >=  0) {
+          var $tweet = createTweetJQObj(streams.users[userName][index]);
+          $tweet.appendTo($('#tweets'));
+          index -= 1;
+        }
+      }
+
       $(document).ready(function(){
         displayTweets();
 
